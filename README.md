@@ -59,32 +59,34 @@ The booking flow is a clear 3-step journey: **Route → Package → Payment**, t
 ## Project structure
 
 ```
-Nextus-main/
-└── pdms-frontend/
-    ├── index.html                 # app shell + Plus Jakarta Sans font
-    └── src/
-        ├── main.jsx               # React entry
-        ├── App.jsx                # all routes + particle backdrop
-        ├── index.css              # global + customer-app styles
-        ├── components/
-        │   └── ParticleBackground.jsx   # bright yellow/red particle canvas
-        └── pages/
-            ├── landing/           # hero landing page (Landing.jsx / Landing.css)
-            ├── auth/              # customer login + register (admin/partner: planned)
-            ├── customer/          # the whole customer journey above
-            ├── partner/           # planned
-            └── admin/             # planned
+Nextus/
+├── index.html                 # app shell + Plus Jakarta Sans font
+├── package.json               # Vite scripts and dependencies
+├── src/
+│   ├── main.jsx               # React entry
+│   ├── App.jsx                # all routes + particle backdrop
+│   ├── index.css              # global + customer-app styles
+│   ├── components/
+│   │   └── ParticleBackground.jsx  # bright yellow/red particle canvas
+│   └── pages/
+│       ├── landing/           # hero landing page (Landing.jsx / Landing.css)
+│       ├── auth/              # customer login and registration
+│       ├── customer/          # customer journey pages
+│       ├── partner/           # delivery partner pages
+│       └── admin/             # admin panel pages
+└── public/                    # static assets
 ```
 
 ## Run it
 
 ```bash
-cd pdms-frontend
 npm install
 npm run dev      # open the printed local URL
 npm run build    # production build -> dist/
 npm run lint
 ```
+
+> The frontend is intentionally located directly in the repository root so GitHub Pages can serve the app without requiring a nested frontend folder.
 
 ## Design notes
 
