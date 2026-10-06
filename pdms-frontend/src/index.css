@@ -9,12 +9,15 @@
 html,
 body,
 #root {
+  width: 100%;
   margin: 0;
   min-height: 100%;
+  overflow-x: hidden;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
+  min-height: 100vh;
   background: #f3f3f3;
   color: #171717;
 }
@@ -35,8 +38,10 @@ button {
 
 .app {
   width: 100%;
+  max-width: 1180px;
   min-height: 100vh;
   margin: 0 auto;
+  overflow-x: clip;
   background: #ffffff;
   position: relative;
   padding-bottom: 75px;
@@ -2587,4 +2592,32 @@ main {
     padding-top: 28px;
   }
 
+}
+
+/* =========================
+   PARTICLE BACKDROP
+   Bright warm canvas behind the customer app + auth screens
+========================= */
+
+body.has-particles {
+  background:
+    radial-gradient(circle at 12% 8%, #fff3b8 0%, rgba(255, 243, 184, 0) 45%),
+    radial-gradient(circle at 92% 92%, #ffd9d6 0%, rgba(255, 217, 214, 0) 45%),
+    #fffaf0;
+  background-attachment: fixed;
+}
+
+.particle-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+body.has-particles .app,
+body.has-particles .auth-page {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(5px);
 }
