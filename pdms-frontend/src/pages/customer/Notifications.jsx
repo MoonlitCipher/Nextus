@@ -5,7 +5,6 @@ import {
   CheckCircle,
   CreditCard,
   Gift,
-  X,
   ChevronRight,
 } from "lucide-react";
 

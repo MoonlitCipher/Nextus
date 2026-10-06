@@ -1,7 +1,6 @@
 import {
   CheckCircle,
   Package,
-  MapPin,
   CreditCard,
   Truck,
   Navigation,
