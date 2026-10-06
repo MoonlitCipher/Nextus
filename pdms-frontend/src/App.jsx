@@ -1,10 +1,13 @@
+import { useEffect } from "react";
 import {
   BrowserRouter,
   Routes,
   Route,
-  Navigate,
+  useLocation,
 } from "react-router-dom";
+import ParticleBackground from "./components/ParticleBackground";
 
+import Landing from "./pages/landing/Landing";
 import CustomerHome from "./pages/customer/CustomerHome";
 import CustomerLogin from "./pages/auth/CustomerLogin";
 import CustomerRegister from "./pages/auth/CustomerRegister";
@@ -20,15 +23,29 @@ import Profile from "./pages/customer/Profile";
 import Notifications from "./pages/customer/Notifications";
 
 
+/* Bright particle backdrop on every page except the landing hero (which has its own video) */
+function Backdrop() {
+  const { pathname } = useLocation();
+  const show = pathname !== "/";
+
+  useEffect(() => {
+    document.body.classList.toggle("has-particles", show);
+    return () => document.body.classList.remove("has-particles");
+  }, [show]);
+
+  return show ? <ParticleBackground /> : null;
+}
+
 function App() {
   return (
     <BrowserRouter>
+      <Backdrop />
 
       <Routes>
 
         <Route
           path="/"
-          element={<Navigate to="/customer/login" replace />}
+          element={<Landing />}
         />
 
         <Route
@@ -64,11 +81,6 @@ function App() {
         <Route
           path="/customer/payment"
           element={<Payment />}
-        />
-
-        <Route
-          path="/customer/confirmation"
-          element={<BookingConfirmation />}
         />
 
         <Route
