@@ -29,7 +29,7 @@ function CustomerLogin() {
             <Phone size={20} />
             <input
               type="tel"
-              placeholder="Enter mobile number"
+              placeholder="9876543210"
             />
           </div>
 

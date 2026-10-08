@@ -31,7 +31,7 @@ function CustomerRegister() {
             <User size={20} />
             <input
               type="text"
-              placeholder="Enter your full name"
+              placeholder="Test Name"
             />
           </div>
 
@@ -41,7 +41,7 @@ function CustomerRegister() {
             <Phone size={20} />
             <input
               type="tel"
-              placeholder="Enter mobile number"
+              placeholder="9876543210"
             />
           </div>
 
@@ -51,7 +51,7 @@ function CustomerRegister() {
             <Mail size={20} />
             <input
               type="email"
-              placeholder="Enter email address"
+              placeholder="test@example.com"
             />
           </div>
 
